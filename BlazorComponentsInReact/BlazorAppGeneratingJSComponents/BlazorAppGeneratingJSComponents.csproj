@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+	<UserSecretsId>4a049784-cf12-46df-afd1-083d5c0993ae</UserSecretsId>
+	<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JSComponentGeneration\JSComponentGeneration.csproj" />
+    <ProjectReference Include="..\JSComponentGeneration.Build\JSComponentGeneration.Build.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\JSComponentGeneration.Build\build\netstandard2.0\JSComponentGeneration.Build.targets" />
+
+</Project>
